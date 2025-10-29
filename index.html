@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSBO - Property Details</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-img {
+            transition: transform 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+        }
+        .step {
+            display: none;
+        }
+        .step.active {
+            display: block;
+        }
+        .progress-step {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <h1 class="text-2xl font-bold text-blue-600">FSBO Real Estate Portal</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Property Details Section -->
+        <div id="propertyDetails" class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <!-- Photo Gallery -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-4">
+                <div class="md:col-span-2 lg:col-span-2">
+                    <img id="mainPhoto" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800" 
+                         alt="Main property photo" 
+                         class="w-full h-96 object-cover rounded-lg cursor-pointer">
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400" 
+                         alt="Property photo 2" 
+                         class="w-full h-44 object-cover rounded-lg cursor-pointer gallery-img"
+                         onclick="changeMainPhoto(this.src)">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" 
+                         alt="Property photo 3" 
+                         class="w-full h-44 object-cover rounded-lg cursor-pointer gallery-img"
+                         onclick="changeMainPhoto(this.src)">
+                </div>
+            </div>
+
+            <!-- Property Information -->
+            <div class="p-6 md:p-8">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Beautiful Family Home</h2>
+                        <p class="text-xl text-blue-600 font-semibold">$450,000</p>
+                        <p class="text-gray-600 mt-1">123 Main Street, Anytown, ST 12345</p>
+                    </div>
+                    <button 
+                        onclick="openOfferForm()" 
+                        class="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
+                        Submit Offer
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 pb-8 border-b">
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold text-gray-900">4</p>
+                        <p class="text-gray-600">Bedrooms</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold text-gray-900">3</p>
+                        <p class="text-gray-600">Bathrooms</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold text-gray-900">2,500</p>
+                        <p class="text-gray-600">Sq Ft</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 rounded-lg">
+                        <p class="text-2xl font-bold text-gray-900">2015</p>
+                        <p class="text-gray-600">Year Built</p>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Description</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Welcome to this stunning family home located in a quiet neighborhood. This beautifully maintained 
+                        property features 4 spacious bedrooms, 3 modern bathrooms, and an open-concept living area perfect 
+                        for entertaining. The gourmet kitchen includes stainless steel appliances, granite countertops, and 
+                        a large island. The master suite boasts a walk-in closet and luxurious ensuite bathroom. 
+                        Enjoy the beautifully landscaped backyard with a covered patio, perfect for outdoor gatherings. 
+                        Close to schools, parks, and shopping centers. This is a must-see property!
+                    </p>
+                </div>
+
+                <!-- Property Disclosure Statement (PDS) -->
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Property Disclosure Statement (PDS)</h3>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Roof Condition:</span>
+                                <span class="text-gray-700">Excellent (Replaced 2020)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Foundation:</span>
+                                <span class="text-gray-700">No known issues</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">HVAC System:</span>
+                                <span class="text-gray-700">2018 (Well maintained)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Plumbing:</span>
+                                <span class="text-gray-700">No known issues</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-gray-800">Electrical:</span>
+                                <span class="text-gray-700">Updated to current code</span>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600 italic">
+                            Full disclosure statement available upon request.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Seller Rules -->
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Offer Submission Rules</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Minimum offer: $400,000</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Closing date must be at least 30 days from today</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>All offers will be reviewed within 48 hours</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Offer Form Modal -->
+    <div id="offerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-screen overflow-y-auto">
+            <!-- Modal Header -->
+            <div class="bg-blue-600 text-white p-6 rounded-t-lg">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold">Submit Your Offer</h2>
+                    <button onclick="closeOfferForm()" class="text-white hover:text-gray-200 text-3xl font-bold">&times;</button>
+                </div>
+                <!-- Progress Indicator -->
+                <div class="mt-6 flex justify-between items-center">
+                    <div class="flex-1 flex items-center">
+                        <div id="progress1" class="progress-step w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center font-bold">1</div>
+                        <div class="flex-1 h-1 bg-blue-300 mx-2"></div>
+                    </div>
+                    <div class="flex-1 flex items-center">
+                        <div id="progress2" class="progress-step w-10 h-10 rounded-full bg-blue-300 text-white flex items-center justify-center font-bold">2</div>
+                        <div class="flex-1 h-1 bg-blue-300 mx-2"></div>
+                    </div>
+                    <div class="flex-1 flex items-center">
+                        <div id="progress3" class="progress-step w-10 h-10 rounded-full bg-blue-300 text-white flex items-center justify-center font-bold">3</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal Body -->
+            <form id="offerForm" onsubmit="submitOffer(event)" class="p-6">
+                <!-- Step 1: Buyer Name -->
+                <div id="step1" class="step active">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Step 1: Your Information</h3>
+                    <div class="mb-4">
+                        <label for="buyerName" class="block text-gray-700 font-semibold mb-2">Full Name *</label>
+                        <input 
+                            type="text" 
+                            id="buyerName" 
+                            name="buyerName"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Enter your full name">
+                        <p id="nameError" class="text-red-600 text-sm mt-1 hidden">Please enter your full name</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="buyerEmail" class="block text-gray-700 font-semibold mb-2">Email Address *</label>
+                        <input 
+                            type="email" 
+                            id="buyerEmail" 
+                            name="buyerEmail"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="your.email@example.com">
+                    </div>
+                    <div class="mb-4">
+                        <label for="buyerPhone" class="block text-gray-700 font-semibold mb-2">Phone Number *</label>
+                        <input 
+                            type="tel" 
+                            id="buyerPhone" 
+                            name="buyerPhone"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="(555) 123-4567">
+                    </div>
+                    <div class="flex justify-end">
+                        <button type="button" onclick="nextStep(1)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Next Step →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Offer Price -->
+                <div id="step2" class="step">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Step 2: Offer Details</h3>
+                    <div class="mb-4">
+                        <label for="offerPrice" class="block text-gray-700 font-semibold mb-2">Offer Price *</label>
+                        <div class="relative">
+                            <span class="absolute left-4 top-3 text-gray-600 text-lg">$</span>
+                            <input 
+                                type="number" 
+                                id="offerPrice" 
+                                name="offerPrice"
+                                min="400000"
+                                step="1000"
+                                required
+                                class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="400,000">
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Minimum offer: $400,000</p>
+                        <p id="priceError" class="text-red-600 text-sm mt-1 hidden">Offer must be at least $400,000</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="financing" class="block text-gray-700 font-semibold mb-2">Financing Type *</label>
+                        <select 
+                            id="financing" 
+                            name="financing"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Select financing type</option>
+                            <option value="cash">Cash</option>
+                            <option value="conventional">Conventional Loan</option>
+                            <option value="fha">FHA Loan</option>
+                            <option value="va">VA Loan</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" onclick="prevStep(2)" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300">
+                            ← Previous
+                        </button>
+                        <button type="button" onclick="nextStep(2)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Next Step →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Closing Date -->
+                <div id="step3" class="step">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Step 3: Closing Information</h3>
+                    <div class="mb-4">
+                        <label for="closingDate" class="block text-gray-700 font-semibold mb-2">Proposed Closing Date *</label>
+                        <input 
+                            type="date" 
+                            id="closingDate" 
+                            name="closingDate"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p class="text-sm text-gray-600 mt-1">Must be at least 30 days from today</p>
+                        <p id="dateError" class="text-red-600 text-sm mt-1 hidden">Closing date must be at least 30 days from today</p>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 font-semibold mb-2">Contingencies</label>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" name="contingency" value="inspection" class="mr-2 w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">Home Inspection</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="contingency" value="financing" class="mr-2 w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">Financing Contingency</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" name="contingency" value="appraisal" class="mr-2 w-4 h-4 text-blue-600">
+                                <span class="text-gray-700">Appraisal Contingency</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label for="additionalComments" class="block text-gray-700 font-semibold mb-2">Additional Comments</label>
+                        <textarea 
+                            id="additionalComments" 
+                            name="additionalComments"
+                            rows="4"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            placeholder="Any additional information or special requests..."></textarea>
+                    </div>
+                    <div class="flex justify-between">
+                        <button type="button" onclick="prevStep(3)" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300">
+                            ← Previous
+                        </button>
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Submit Offer
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Message Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full p-8 text-center">
+            <div class="mb-4">
+                <svg class="w-20 h-20 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Offer Submitted!</h2>
+            <p class="text-gray-700 mb-6">Your offer has been successfully submitted. The seller will review it and get back to you within 48 hours.</p>
+            <button onclick="closeSuccessModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
