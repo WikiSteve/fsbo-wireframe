@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FSBO - Property Details</title>
+    <title>FSBO Electronic Agent Pilot – Product Blueprint</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         .gallery-img {
@@ -21,159 +21,132 @@
         .progress-step {
             transition: all 0.3s ease;
         }
+        .scroll-box {
+            max-height: 18rem;
+            overflow-y: auto;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
     <header class="bg-white shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <h1 class="text-2xl font-bold text-blue-600">FSBO Real Estate Portal</h1>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <h1 class="text-2xl font-bold text-blue-700">FSBO Electronic Agent – Pilot Experience</h1>
+            <div class="text-sm text-gray-500">Lawyer-led automation model for a private sale workflow</div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <!-- Property Details Section -->
-        <div id="propertyDetails" class="bg-white rounded-lg shadow-lg overflow-hidden">
-            <!-- Photo Gallery -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 p-4">
-                <div class="md:col-span-2 lg:col-span-2">
-                    <img id="mainPhoto" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800" 
-                         alt="Main property photo" 
-                         class="w-full h-96 object-cover rounded-lg cursor-pointer">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+        <section id="propertyDetails" class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-blue-900 text-white px-6 py-3 text-sm md:text-base">
+                Private sale by owner. This site is the owner’s tool to receive offers and to communicate the Owner’s acceptance automatically when pre-set conditions are met. It is not a brokerage, marketplace, or advisory service.
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 p-4">
+                <div class="lg:col-span-2">
+                    <img id="mainPhoto" src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200" alt="Exterior of a modern split-entry home" class="w-full h-96 object-cover rounded-lg cursor-pointer">
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-1 gap-2">
-                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400" 
-                         alt="Property photo 2" 
-                         class="w-full h-44 object-cover rounded-lg cursor-pointer gallery-img"
-                         onclick="changeMainPhoto(this.src)">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400" 
-                         alt="Property photo 3" 
-                         class="w-full h-44 object-cover rounded-lg cursor-pointer gallery-img"
-                         onclick="changeMainPhoto(this.src)">
+                <div class="grid grid-cols-2 lg:grid-cols-1 gap-2">
+                    <img src="https://images.unsplash.com/photo-1600607687632-4e2a09cf159d?w=600" alt="Split-entry interior" class="w-full h-44 object-cover rounded-lg cursor-pointer gallery-img" onclick="changeMainPhoto(this.src)">
+                    <img src="https://images.unsplash.com/photo-1600607687644-8d2c0b5c8d87?w=600" alt="Detached garage" class="w-full h-44 object-cover rounded-lg cursor-pointer gallery-img" onclick="changeMainPhoto(this.src)">
                 </div>
             </div>
 
-            <!-- Property Information -->
-            <div class="p-6 md:p-8">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+            <div class="p-6 md:p-8 space-y-8">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                     <div>
-                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Beautiful Family Home</h2>
-                        <p class="text-xl text-blue-600 font-semibold">$450,000</p>
-                        <p class="text-gray-600 mt-1">123 Main Street, Anytown, ST 12345</p>
+                        <h2 class="text-3xl font-bold text-gray-900 mb-2">Pilot Blueprint: Automated FSBO Sale</h2>
+                        <p class="text-xl text-blue-700 font-semibold">Objective: Prove a compliant, rules-driven private sale</p>
+                        <p class="text-gray-600 mt-1">This wireframe demonstrates how the electronic agent experience aligns with legal, operational, and research deliverables.</p>
                     </div>
-                    <button 
-                        onclick="openOfferForm()" 
-                        class="mt-4 md:mt-0 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
-                        Submit Offer
-                    </button>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 pb-8 border-b">
-                    <div class="text-center p-4 bg-gray-50 rounded-lg">
-                        <p class="text-2xl font-bold text-gray-900">4</p>
-                        <p class="text-gray-600">Bedrooms</p>
-                    </div>
-                    <div class="text-center p-4 bg-gray-50 rounded-lg">
-                        <p class="text-2xl font-bold text-gray-900">3</p>
-                        <p class="text-gray-600">Bathrooms</p>
-                    </div>
-                    <div class="text-center p-4 bg-gray-50 rounded-lg">
-                        <p class="text-2xl font-bold text-gray-900">2,500</p>
-                        <p class="text-gray-600">Sq Ft</p>
-                    </div>
-                    <div class="text-center p-4 bg-gray-50 rounded-lg">
-                        <p class="text-2xl font-bold text-gray-900">2015</p>
-                        <p class="text-gray-600">Year Built</p>
+                    <div class="flex flex-col items-start gap-3">
+                        <button onclick="openOfferForm()" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition duration-300 shadow-lg hover:shadow-xl">Submit Rule-Compliant Offer</button>
+                        <div class="text-sm text-gray-500">Offer window &amp; tie-break<br><span class="text-gray-700 font-medium">If more than one compliant offer is submitted, the Owner will accept the first offer for which the law firm confirms both (a) identity verification and (b) cleared deposit during the offer window.</span></div>
                     </div>
                 </div>
 
-                <!-- Description -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Description</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border border-gray-100 rounded-lg p-4">
+                    <div class="text-center space-y-1">
+                        <p class="text-sm uppercase tracking-wide text-gray-500">Product Goal</p>
+                        <p class="text-xl font-bold text-gray-900">Fair-value sale with minimal negotiation</p>
+                    </div>
+                    <div class="text-center space-y-1">
+                        <p class="text-sm uppercase tracking-wide text-gray-500">Operational Focus</p>
+                        <p class="text-xl font-bold text-gray-900">Automated rule enforcement + lawyer gates</p>
+                    </div>
+                    <div class="text-center space-y-1">
+                        <p class="text-sm uppercase tracking-wide text-gray-500">Research Track</p>
+                        <p class="text-xl font-bold text-gray-900">NSCC SPRINT pilot &amp; audit pack prototype</p>
+                    </div>
+                </div>
+
+                <section class="space-y-4">
+                    <h3 class="text-2xl font-bold text-gray-900">Pilot overview</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Welcome to this stunning family home located in a quiet neighborhood. This beautifully maintained 
-                        property features 4 spacious bedrooms, 3 modern bathrooms, and an open-concept living area perfect 
-                        for entertaining. The gourmet kitchen includes stainless steel appliances, granite countertops, and 
-                        a large island. The master suite boasts a walk-in closet and luxurious ensuite bathroom. 
-                        Enjoy the beautifully landscaped backyard with a covered patio, perfect for outdoor gatherings. 
-                        Close to schools, parks, and shopping centers. This is a must-see property!
+                        The electronic agent orchestrates a seven-day FSBO sprint by combining rules-based validation with lawyer-controlled identity and trust processes. This concept wireframe highlights the product experience that keeps the seller within the private seller exemption while delivering the documentation needed for a future B2B rollout.
                     </p>
-                </div>
+                </section>
 
-                <!-- Property Disclosure Statement (PDS) -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Property Disclosure Statement (PDS)</h3>
-                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                        <div class="space-y-4">
-                            <div class="flex justify-between items-center">
-                                <span class="font-semibold text-gray-800">Roof Condition:</span>
-                                <span class="text-gray-700">Excellent (Replaced 2020)</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-semibold text-gray-800">Foundation:</span>
-                                <span class="text-gray-700">No known issues</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-semibold text-gray-800">HVAC System:</span>
-                                <span class="text-gray-700">2018 (Well maintained)</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-semibold text-gray-800">Plumbing:</span>
-                                <span class="text-gray-700">No known issues</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="font-semibold text-gray-800">Electrical:</span>
-                                <span class="text-gray-700">Updated to current code</span>
-                            </div>
-                        </div>
-                        <p class="mt-4 text-sm text-gray-600 italic">
-                            Full disclosure statement available upon request.
-                        </p>
+                <section class="space-y-3">
+                    <p class="text-2xl font-bold text-gray-900">How acceptance works</p>
+                    <p class="text-gray-700 leading-relaxed">The Owner has pre-set objective rules for acceptable offers (price, closing window, and conditions). If your offer passes those rules, you’ll be sent to the Owner’s law firm to (1) verify your identity and (2) pay the deposit into the firm’s trust account. When the law firm confirms both (a) identity verification and (b) cleared deposit, the Owner’s electronic agent will communicate the Owner’s acceptance on screen and by email with the fully executed Agreement of Purchase and Sale. No negotiation is available through this site.</p>
+                </section>
+
+                <section class="space-y-3">
+                    <h3 class="text-xl font-bold text-gray-900">Represented buyers and agents</h3>
+                    <p class="text-gray-700">This is a private sale. No cooperating commission is offered. Represented buyers may submit through this portal. Any compensation owed to a brokerage is between that buyer and their brokerage under their buyer agreement.</p>
+                </section>
+
+                <section class="space-y-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-gray-900">Product deliverables</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start"><span class="text-blue-700 mr-2">•</span><span>Legally vetted portal copy aligning with Nova Scotia RETA, ECA, and privacy requirements.</span></li>
+                            <li class="flex items-start"><span class="text-blue-700 mr-2">•</span><span>Rules engine enforcing seller-defined floors, closing windows, and condition limits.</span></li>
+                            <li class="flex items-start"><span class="text-blue-700 mr-2">•</span><span>Disclosure library packaging the Property Disclosure Statement, inspection, appraisal, and Rapid Re-Inspection instructions.</span></li>
+                            <li class="flex items-start"><span class="text-blue-700 mr-2">•</span><span>Lawyer-led KYC and trust deposit workflow with cryptographic webhook validation.</span></li>
+                            <li class="flex items-start"><span class="text-blue-700 mr-2">•</span><span>Immutable audit pack generation for dispute resolution and research documentation.</span></li>
+                        </ul>
                     </div>
-                </div>
 
-                <!-- Seller Rules -->
-                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Offer Submission Rules</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Minimum offer: $400,000</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>Closing date must be at least 30 days from today</span>
-                        </li>
-                        <li class="flex items-start">
-                            <svg class="w-5 h-5 text-yellow-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
-                            <span>All offers will be reviewed within 48 hours</span>
-                        </li>
-                    </ul>
-                </div>
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-6 space-y-3">
+                        <h3 class="text-xl font-bold text-gray-900">Pilot objectives</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start"><span class="text-green-700 mr-2">•</span><span>Complete a compliant private sale while preserving fair value for the seller.</span></li>
+                            <li class="flex items-start"><span class="text-green-700 mr-2">•</span><span>Document the workflow for the NSCC SPRINT research track.</span></li>
+                            <li class="flex items-start"><span class="text-green-700 mr-2">•</span><span>Stress-test Rapid Re-Inspection agreements and lawyer gating procedures.</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6 space-y-4">
+                        <h3 class="text-xl font-bold text-gray-900">Offer parameters (automated filter)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start"><span class="text-yellow-600 mr-2">•</span><span>Price floor: $255,000.</span></li>
+                            <li class="flex items-start"><span class="text-yellow-600 mr-2">•</span><span>Closing window: 90 to 120 days from acceptance.</span></li>
+                            <li class="flex items-start"><span class="text-yellow-600 mr-2">•</span><span>Conditions: Financing condition only, limited to 7 business days.</span></li>
+                            <li class="flex items-start"><span class="text-yellow-600 mr-2">•</span><span>Deposit: $2,500 payable to the seller’s counsel trust account.</span></li>
+                            <li class="flex items-start"><span class="text-yellow-600 mr-2">•</span><span>Irrevocability: 24 business hours from submission.</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="bg-green-50 border border-green-200 rounded-lg p-6 space-y-3 hidden" id="acceptanceBanner">
+                    <h3 class="text-xl font-bold text-green-800">Offer Accepted by the Owner</h3>
+                    <p class="text-green-900">The Owner has accepted your offer. Acceptance is communicated by the Owner’s electronic agent after confirmation of the pre-set conditions. A copy of the fully executed Agreement of Purchase and Sale has been sent to your email. The site is now closed to new offers.</p>
+                </section>
             </div>
-        </div>
+        </section>
     </main>
 
-    <!-- Offer Form Modal -->
     <div id="offerModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
         <div class="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-screen overflow-y-auto">
-            <!-- Modal Header -->
-            <div class="bg-blue-600 text-white p-6 rounded-t-lg">
+            <div class="bg-blue-700 text-white p-6 rounded-t-lg">
                 <div class="flex justify-between items-center">
                     <h2 class="text-2xl font-bold">Submit Your Offer</h2>
                     <button onclick="closeOfferForm()" class="text-white hover:text-gray-200 text-3xl font-bold">&times;</button>
                 </div>
-                <!-- Progress Indicator -->
                 <div class="mt-6 flex justify-between items-center">
                     <div class="flex-1 flex items-center">
-                        <div id="progress1" class="progress-step w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center font-bold">1</div>
+                        <div id="progress1" class="progress-step w-10 h-10 rounded-full bg-white text-blue-700 flex items-center justify-center font-bold">1</div>
                         <div class="flex-1 h-1 bg-blue-300 mx-2"></div>
                     </div>
                     <div class="flex-1 flex items-center">
@@ -186,160 +159,106 @@
                 </div>
             </div>
 
-            <!-- Modal Body -->
-            <form id="offerForm" onsubmit="submitOffer(event)" class="p-6">
-                <!-- Step 1: Buyer Name -->
-                <div id="step1" class="step active">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Step 1: Your Information</h3>
-                    <div class="mb-4">
-                        <label for="buyerName" class="block text-gray-700 font-semibold mb-2">Full Name *</label>
-                        <input 
-                            type="text" 
-                            id="buyerName" 
-                            name="buyerName"
-                            required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your full name">
-                        <p id="nameError" class="text-red-600 text-sm mt-1 hidden">Please enter your full name</p>
+            <form id="offerForm" onsubmit="submitOffer(event)" class="p-6 space-y-6">
+                <div id="step1" class="step active space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900">Step 1: Buyer information</h3>
+                    <div>
+                        <label for="buyerName" class="block text-gray-700 font-semibold mb-2">Full legal name *</label>
+                        <input type="text" id="buyerName" name="buyerName" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Jane Doe">
+                        <p id="nameError" class="text-red-600 text-sm mt-1 hidden">Please enter your full name.</p>
                     </div>
-                    <div class="mb-4">
-                        <label for="buyerEmail" class="block text-gray-700 font-semibold mb-2">Email Address *</label>
-                        <input 
-                            type="email" 
-                            id="buyerEmail" 
-                            name="buyerEmail"
-                            required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="your.email@example.com">
-                    </div>
-                    <div class="mb-4">
-                        <label for="buyerPhone" class="block text-gray-700 font-semibold mb-2">Phone Number *</label>
-                        <input 
-                            type="tel" 
-                            id="buyerPhone" 
-                            name="buyerPhone"
-                            required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="(555) 123-4567">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="buyerEmail" class="block text-gray-700 font-semibold mb-2">Email address *</label>
+                            <input type="email" id="buyerEmail" name="buyerEmail" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com">
+                            <p id="emailError" class="text-red-600 text-sm mt-1 hidden">Enter a valid email address (for example, name@example.com).</p>
+                        </div>
+                        <div>
+                            <label for="buyerPhone" class="block text-gray-700 font-semibold mb-2">Phone number *</label>
+                            <input type="tel" id="buyerPhone" name="buyerPhone" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="(902) 555-1234">
+                            <p id="phoneError" class="text-red-600 text-sm mt-1 hidden">Enter a valid phone number with at least 10 digits.</p>
+                        </div>
                     </div>
                     <div class="flex justify-end">
-                        <button type="button" onclick="nextStep(1)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                            Next Step →
-                        </button>
+                        <button type="button" onclick="nextStep(1)" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Next step →</button>
                     </div>
                 </div>
 
-                <!-- Step 2: Offer Price -->
-                <div id="step2" class="step">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Step 2: Offer Details</h3>
-                    <div class="mb-4">
-                        <label for="offerPrice" class="block text-gray-700 font-semibold mb-2">Offer Price *</label>
+                <div id="step2" class="step space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900">Step 2: Offer terms</h3>
+                    <div>
+                        <label for="offerPrice" class="block text-gray-700 font-semibold mb-2">Offer price (minimum $255,000) *</label>
                         <div class="relative">
                             <span class="absolute left-4 top-3 text-gray-600 text-lg">$</span>
-                            <input 
-                                type="number" 
-                                id="offerPrice" 
-                                name="offerPrice"
-                                min="400000"
-                                step="1000"
-                                required
-                                class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                placeholder="400,000">
+                            <input type="number" id="offerPrice" name="offerPrice" min="255000" step="1000" required class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="269900">
                         </div>
-                        <p class="text-sm text-gray-600 mt-1">Minimum offer: $400,000</p>
-                        <p id="priceError" class="text-red-600 text-sm mt-1 hidden">Offer must be at least $400,000</p>
+                        <p id="priceError" class="text-red-600 text-sm mt-1 hidden">Offer must be at least $255,000.</p>
                     </div>
-                    <div class="mb-4">
-                        <label for="financing" class="block text-gray-700 font-semibold mb-2">Financing Type *</label>
-                        <select 
-                            id="financing" 
-                            name="financing"
-                            required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <option value="">Select financing type</option>
-                            <option value="cash">Cash</option>
-                            <option value="conventional">Conventional Loan</option>
-                            <option value="fha">FHA Loan</option>
-                            <option value="va">VA Loan</option>
-                            <option value="other">Other</option>
-                        </select>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm text-gray-700 space-y-2">
+                        <p class="font-semibold text-gray-900">Deposit instructions</p>
+                        <p>Deposit: $2,500 payable to the seller’s retained law firm trust account. Directions and reference details will be provided after the electronic agent confirms your offer meets the rules.</p>
+                        <p>Irrevocability: Offers submitted through this portal are irrevocable for 24 business hours from submission.</p>
                     </div>
                     <div class="flex justify-between">
-                        <button type="button" onclick="prevStep(2)" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300">
-                            ← Previous
-                        </button>
-                        <button type="button" onclick="nextStep(2)" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                            Next Step →
-                        </button>
+                        <button type="button" onclick="prevStep(2)" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300">← Previous</button>
+                        <button type="button" onclick="nextStep(2)" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Next step →</button>
                     </div>
                 </div>
 
-                <!-- Step 3: Closing Date -->
-                <div id="step3" class="step">
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Step 3: Closing Information</h3>
-                    <div class="mb-4">
-                        <label for="closingDate" class="block text-gray-700 font-semibold mb-2">Proposed Closing Date *</label>
-                        <input 
-                            type="date" 
-                            id="closingDate" 
-                            name="closingDate"
-                            required
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <p class="text-sm text-gray-600 mt-1">Must be at least 30 days from today</p>
-                        <p id="dateError" class="text-red-600 text-sm mt-1 hidden">Closing date must be at least 30 days from today</p>
+                <div id="step3" class="step space-y-4">
+                    <h3 class="text-xl font-bold text-gray-900">Step 3: Closing, financing, and acknowledgments</h3>
+                    <div>
+                        <label for="closingDate" class="block text-gray-700 font-semibold mb-2">Requested closing date *</label>
+                        <input type="date" id="closingDate" name="closingDate" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p id="dateError" class="text-red-600 text-sm mt-1 hidden">Closing date must be between 90 and 120 days from today.</p>
                     </div>
-                    <div class="mb-4">
-                        <label class="block text-gray-700 font-semibold mb-2">Contingencies</label>
-                        <div class="space-y-2">
-                            <label class="flex items-center">
-                                <input type="checkbox" name="contingency" value="inspection" class="mr-2 w-4 h-4 text-blue-600">
-                                <span class="text-gray-700">Home Inspection</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" name="contingency" value="financing" class="mr-2 w-4 h-4 text-blue-600">
-                                <span class="text-gray-700">Financing Contingency</span>
-                            </label>
-                            <label class="flex items-center">
-                                <input type="checkbox" name="contingency" value="appraisal" class="mr-2 w-4 h-4 text-blue-600">
-                                <span class="text-gray-700">Appraisal Contingency</span>
-                            </label>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-sm text-gray-700 space-y-2">
+                        <p class="font-semibold text-gray-900">Financing condition</p>
+                        <p>Only a financing condition is permitted (7 business days). Indicate below if you require it. Inspection conditions are not available; see the Rapid Re-Inspection program noted above.</p>
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="financingCondition" name="financingCondition" class="w-4 h-4 text-blue-700">
+                            <label for="financingCondition" class="text-gray-700">Include financing condition (7 business days)</label>
                         </div>
                     </div>
-                    <div class="mb-6">
-                        <label for="additionalComments" class="block text-gray-700 font-semibold mb-2">Additional Comments</label>
-                        <textarea 
-                            id="additionalComments" 
-                            name="additionalComments"
-                            rows="4"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Any additional information or special requests..."></textarea>
+                    <div class="space-y-3">
+                        <p class="text-sm text-gray-600">Mandatory acknowledgment prior to offer submission:</p>
+                        <div class="scroll-box border border-gray-200 rounded-lg p-4 bg-gray-50 text-sm text-gray-700 space-y-2">
+                            <p>By checking this box and submitting my offer, I, the Buyer, acknowledge, represent, and agree to the following:</p>
+                            <p>a) Review of Documents: I have received and reviewed the Seller's Property Disclosure Statement, the pre-listing home inspection report published in the disclosure library, and the appraisal summary provided alongside this listing (collectively, the "Provided Documents").</p>
+                            <p>b) No Seller Warranty: I understand and agree that the Seller does not in any way warrant or guarantee the accuracy, completeness, or conclusions of the third-party inspection or appraisal reports. These reports are provided for informational purposes only.</p>
+                            <p>c) No Privity of Contract: I acknowledge that the Provided Documents were prepared for the Seller. I have no contract with the third-party professionals who prepared them and, unless I separately obtain a formal reliance agreement directly from a professional, I have no legal right to rely on their reports and no legal recourse against them for any errors or omissions.</p>
+                            <p>d) Voluntary Waiver of New Inspection: I understand that I have the right to make my offer conditional upon obtaining a new, independent home inspection by a professional of my own choosing. I hereby voluntarily and knowingly waive this right and agree to submit my offer without such a condition.</p>
+                            <p>e) Seller's Duty Preserved: I understand that this waiver does not, in any way, limit or release the Seller from their legal duty to disclose any and all Material Latent Defects of which they have actual knowledge.</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="disclosureAcknowledgment" class="w-4 h-4 text-blue-700">
+                            <label for="disclosureAcknowledgment" class="text-gray-700 font-medium">I agree to the full acknowledgment above.</label>
+                        </div>
+                        <p id="ackError" class="text-red-600 text-sm mt-1 hidden">You must agree to the acknowledgment before submitting.</p>
                     </div>
-                    <div class="flex justify-between">
-                        <button type="button" onclick="prevStep(3)" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300">
-                            ← Previous
-                        </button>
-                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                            Submit Offer
-                        </button>
+                    <div>
+                        <label for="additionalComments" class="block text-gray-700 font-semibold mb-2">Additional notes for the seller (optional)</label>
+                        <textarea id="additionalComments" name="additionalComments" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Optional information for the seller"></textarea>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <button type="button" onclick="prevStep(3)" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300">← Previous</button>
+                        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Submit offer for automated review</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Success Message Modal -->
     <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-lg shadow-2xl max-w-md w-full p-8 text-center">
-            <div class="mb-4">
-                <svg class="w-20 h-20 text-green-600 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+        <div class="bg-white rounded-lg shadow-2xl max-w-lg w-full p-8 text-center space-y-4">
+            <div>
+                <svg class="w-16 h-16 text-blue-700 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                 </svg>
             </div>
-            <h2 class="text-2xl font-bold text-gray-900 mb-2">Offer Submitted!</h2>
-            <p class="text-gray-700 mb-6">Your offer has been successfully submitted. The seller will review it and get back to you within 48 hours.</p>
-            <button onclick="closeSuccessModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                Close
-            </button>
+            <h2 class="text-2xl font-bold text-gray-900">Offer submitted to the electronic agent</h2>
+            <p class="text-gray-700">If your offer meets the Owner’s pre-set rules, you will immediately be redirected to the law firm for KYC and deposit instructions. Watch your email for status updates from the portal.</p>
+            <button onclick="closeSuccessModal()" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">Close</button>
         </div>
     </div>
 
