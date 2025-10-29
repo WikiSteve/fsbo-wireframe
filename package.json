@@ -1,0 +1,17 @@
+{
+  "name": "fsbo-wireframe",
+  "version": "1.0.0",
+  "description": "Wireframe for a FSBO real estate portal",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./styles.css",
+    "watch:css": "tailwindcss -i ./input.css -o ./styles.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["fsbo", "real-estate", "wireframe", "tailwindcss"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.18"
+  }
+}
