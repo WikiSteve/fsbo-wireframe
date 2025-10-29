@@ -34,7 +34,7 @@ Wireframe for a FSBO (For Sale By Owner) real estate portal.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/WikiSteve/fsbo-wireframe.git
+git clone <repository-url>
 cd fsbo-wireframe
 ```
 
